@@ -10,7 +10,9 @@
 
 void Clock_Set_Hour(u8 H_data1, u8 M_data2)
 {
-    EEPROM_Write_Byte(0b10100000, 0b00000000, 4);
+    EEPROM_Write_Byte(0b10100000, Clock_Hour_add1, H_data1);
+    _delay_ms(100);
+    EEPROM_Write_Byte(0b10100000, Clock_Hour_add2, M_data2);
 }
 void Clock_Set_Min(u8 H_data1, u8 M_data2)
 {
