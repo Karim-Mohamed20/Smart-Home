@@ -41,22 +41,22 @@
 #define Clock_Isha_add3 21
 #define Clock_Isha_add4 22
 
-void Clock_Set_Hour(u8 data);
-void Clock_Set_Min(u8 data);
+void Clock_Set_Hour(u8 H_data1,u8 M_data2);
+void Clock_Set_Min(u8 H_data1,u8 M_data2);
 
-void Clock_Set_Fajr(u8 data);
-void Clock_Set_Dhuhr(u8 data);
-void Clock_Set_Asr(u8 data);
-void Clock_Set_Maghrib(u8 data);
-void Clock_Set_Isha(u8 data);
+void Clock_Set_Fajr(u8 H_data1,u8 M_data2);
+void Clock_Set_Dhuhr(u8 H_data1,u8 M_data2);
+void Clock_Set_Asr(u8 H_data1,u8 M_data2);
+void Clock_Set_Maghrib(u8 H_data1,u8 M_data2);
+void Clock_Set_Isha(u8 H_data1,u8 M_data2);
 
-u8 Clock_Get_Hour();
-u8 Clock_Get_Min();
-u8 Clock_Get_Fajr();
-u8 Clock_Get_Dhuhr();
-u8 Clock_Get_Asr();
-u8 Clock_Get_Maghrib();
-u8 Clock_Get_Isha();
+u16 Clock_Get_Hour();
+u16 Clock_Get_Min();
+u16 Clock_Get_Fajr();
+u16 Clock_Get_Dhuhr();
+u16 Clock_Get_Asr();
+u16 Clock_Get_Maghrib();
+u16 Clock_Get_Isha();
 
 
 
