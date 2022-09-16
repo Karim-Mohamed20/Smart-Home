@@ -1,16 +1,16 @@
 src/I2C.o src/I2C.o: ../src/I2C.c \
-  D:\Embedded\Work_Space\Project\inc/std_types.h \
-  D:\Embedded\Work_Space\Project\inc/macros.h \
-  D:\Embedded\Work_Space\Project\inc/Registers.h \
-  D:\Embedded\Work_Space\Project\inc/I2C.h \
-  D:\Embedded\Work_Space\Project\inc/I2C_cfg.h
+  E:\CMP2024\cmp2024\embedded2\Smart-Home\inc/std_types.h \
+  E:\CMP2024\cmp2024\embedded2\Smart-Home\inc/macros.h \
+  E:\CMP2024\cmp2024\embedded2\Smart-Home\inc/Registers.h \
+  E:\CMP2024\cmp2024\embedded2\Smart-Home\inc/I2C.h \
+  E:\CMP2024\cmp2024\embedded2\Smart-Home\inc/I2C_cfg.h
 
-D:\Embedded\Work_Space\Project\inc/std_types.h:
+E:\CMP2024\cmp2024\embedded2\Smart-Home\inc/std_types.h:
 
-D:\Embedded\Work_Space\Project\inc/macros.h:
+E:\CMP2024\cmp2024\embedded2\Smart-Home\inc/macros.h:
 
-D:\Embedded\Work_Space\Project\inc/Registers.h:
+E:\CMP2024\cmp2024\embedded2\Smart-Home\inc/Registers.h:
 
-D:\Embedded\Work_Space\Project\inc/I2C.h:
+E:\CMP2024\cmp2024\embedded2\Smart-Home\inc/I2C.h:
 
-D:\Embedded\Work_Space\Project\inc/I2C_cfg.h:
+E:\CMP2024\cmp2024\embedded2\Smart-Home\inc/I2C_cfg.h:

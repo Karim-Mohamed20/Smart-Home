@@ -1,19 +1,19 @@
 src/EEPROM.o src/EEPROM.o: ../src/EEPROM.c \
-  D:\Embedded\Work_Space\Project\inc/std_types.h \
-  D:\Embedded\Work_Space\Project\inc/macros.h \
-  D:\Embedded\Work_Space\Project\inc/Registers.h \
-  D:\Embedded\Work_Space\Project\inc/I2C.h \
-  D:\Embedded\Work_Space\Project\inc/EEPROM.h \
-  D:\Embedded\Work_Space\Project\inc/EEPROM_cfg.h
+  E:\CMP2024\cmp2024\embedded2\Smart-Home\inc/std_types.h \
+  E:\CMP2024\cmp2024\embedded2\Smart-Home\inc/macros.h \
+  E:\CMP2024\cmp2024\embedded2\Smart-Home\inc/Registers.h \
+  E:\CMP2024\cmp2024\embedded2\Smart-Home\inc/I2C.h \
+  E:\CMP2024\cmp2024\embedded2\Smart-Home\inc/EEPROM.h \
+  E:\CMP2024\cmp2024\embedded2\Smart-Home\inc/EEPROM_cfg.h
 
-D:\Embedded\Work_Space\Project\inc/std_types.h:
+E:\CMP2024\cmp2024\embedded2\Smart-Home\inc/std_types.h:
 
-D:\Embedded\Work_Space\Project\inc/macros.h:
+E:\CMP2024\cmp2024\embedded2\Smart-Home\inc/macros.h:
 
-D:\Embedded\Work_Space\Project\inc/Registers.h:
+E:\CMP2024\cmp2024\embedded2\Smart-Home\inc/Registers.h:
 
-D:\Embedded\Work_Space\Project\inc/I2C.h:
+E:\CMP2024\cmp2024\embedded2\Smart-Home\inc/I2C.h:
 
-D:\Embedded\Work_Space\Project\inc/EEPROM.h:
+E:\CMP2024\cmp2024\embedded2\Smart-Home\inc/EEPROM.h:
 
-D:\Embedded\Work_Space\Project\inc/EEPROM_cfg.h:
+E:\CMP2024\cmp2024\embedded2\Smart-Home\inc/EEPROM_cfg.h:

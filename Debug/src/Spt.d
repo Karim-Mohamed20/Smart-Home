@@ -1,19 +1,19 @@
 src/Spt.o src/Spt.o: ../src/Spt.c \
-  D:\Embedded\Work_Space\Project\inc/std_types.h \
-  D:\Embedded\Work_Space\Project\inc/macros.h \
-  D:\Embedded\Work_Space\Project\inc/Registers.h \
-  D:\Embedded\Work_Space\Project\inc/int.h \
-  D:\Embedded\Work_Space\Project\inc/Spt.h \
-  D:\Embedded\Work_Space\Project\inc/std_types.h
+  E:\CMP2024\cmp2024\embedded2\Smart-Home\inc/std_types.h \
+  E:\CMP2024\cmp2024\embedded2\Smart-Home\inc/macros.h \
+  E:\CMP2024\cmp2024\embedded2\Smart-Home\inc/Registers.h \
+  E:\CMP2024\cmp2024\embedded2\Smart-Home\inc/int.h \
+  E:\CMP2024\cmp2024\embedded2\Smart-Home\inc/Spt.h \
+  E:\CMP2024\cmp2024\embedded2\Smart-Home\inc/std_types.h
 
-D:\Embedded\Work_Space\Project\inc/std_types.h:
+E:\CMP2024\cmp2024\embedded2\Smart-Home\inc/std_types.h:
 
-D:\Embedded\Work_Space\Project\inc/macros.h:
+E:\CMP2024\cmp2024\embedded2\Smart-Home\inc/macros.h:
 
-D:\Embedded\Work_Space\Project\inc/Registers.h:
+E:\CMP2024\cmp2024\embedded2\Smart-Home\inc/Registers.h:
 
-D:\Embedded\Work_Space\Project\inc/int.h:
+E:\CMP2024\cmp2024\embedded2\Smart-Home\inc/int.h:
 
-D:\Embedded\Work_Space\Project\inc/Spt.h:
+E:\CMP2024\cmp2024\embedded2\Smart-Home\inc/Spt.h:
 
-D:\Embedded\Work_Space\Project\inc/std_types.h:
+E:\CMP2024\cmp2024\embedded2\Smart-Home\inc/std_types.h:

@@ -1,5 +1,13 @@
-#ifndef EEPROM_H_
-#define EEPROM_H_
+/*
+ * EEPROM.h
+ *
+ *  Created on: ??þ/??þ/????
+ *      Author: medoa
+ */
+
+#ifndef INC_EEPROM_H_
+#define INC_EEPROM_H_
+
 
 /*Initialize EEPROM*/
 void EEPROM_Init(void);
@@ -8,4 +16,5 @@ void EEPROM_Write_Byte(u8 AddressSlave ,u8 AddressLocation,u8 Data);
 /*Read byte to EEPROM*/
 u8 EEPROM_Read_Byte(u8 AddressSlave ,u8 AddressLocation);
 
-#endif
+
+#endif /* INC_EEPROM_H_ */

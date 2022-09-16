@@ -1,63 +1,70 @@
-main.o main.o: ../main.c D:\Embedded\Work_Space\Project\inc/macros.h \
-  D:\Embedded\Work_Space\Project\inc/std_types.h \
-  D:\Embedded\Work_Space\Project\inc/DIO.h \
-  D:\Embedded\Work_Space\Project\inc/SSD.h \
-  D:\Embedded\Work_Space\Project\inc/DIO.h \
-  D:\Embedded\Work_Space\Project\inc/LCD.h \
-  D:\Embedded\Work_Space\Project\inc/Keypad.h \
-  D:\Embedded\Work_Space\Project\inc/ExtInterrupt.h \
-  D:\Embedded\Work_Space\Project\inc/Adc.h \
-  D:\Embedded\Work_Space\Project\inc/Gpt.h \
-  D:\Embedded\Work_Space\Project\inc/GlobalInterrupt.h \
-  D:\Embedded\Work_Space\Project\inc/Spt.h \
-  D:\Embedded\Work_Space\Project\inc/std_types.h \
-  D:\Embedded\Work_Space\Project\inc/UART.h \
-  D:\Embedded\Work_Space\Project\inc/SPI_cfg.h \
-  D:\Embedded\Work_Space\Project\inc/SPI.h \
-  D:\Embedded\Work_Space\Project\inc/WDT.h \
-  D:\Embedded\Work_Space\Project\inc/I2C.h \
-  D:\Embedded\Work_Space\Project\inc/I2C_cfg.h \
-  D:\Embedded\Work_Space\Project\inc/EEPROM.h \
-  D:\Embedded\Work_Space\Project\inc/EEPROM_cfg.h
+main.o main.o: ../main.c \
+  E:\CMP2024\cmp2024\embedded2\Smart-Home\inc/macros.h \
+  E:\CMP2024\cmp2024\embedded2\Smart-Home\inc/std_types.h \
+  E:\CMP2024\cmp2024\embedded2\Smart-Home\inc/DIO.h \
+  E:\CMP2024\cmp2024\embedded2\Smart-Home\inc/SSD.h \
+  E:\CMP2024\cmp2024\embedded2\Smart-Home\inc/DIO.h \
+  E:\CMP2024\cmp2024\embedded2\Smart-Home\inc/LCD.h \
+  E:\CMP2024\cmp2024\embedded2\Smart-Home\inc/Keypad.h \
+  E:\CMP2024\cmp2024\embedded2\Smart-Home\inc/ExtInterrupt.h \
+  E:\CMP2024\cmp2024\embedded2\Smart-Home\inc/Adc.h \
+  E:\CMP2024\cmp2024\embedded2\Smart-Home\inc/Gpt.h \
+  E:\CMP2024\cmp2024\embedded2\Smart-Home\inc/GlobalInterrupt.h \
+  E:\CMP2024\cmp2024\embedded2\Smart-Home\inc/Spt.h \
+  E:\CMP2024\cmp2024\embedded2\Smart-Home\inc/std_types.h \
+  E:\CMP2024\cmp2024\embedded2\Smart-Home\inc/UART.h \
+  E:\CMP2024\cmp2024\embedded2\Smart-Home\inc/SPI_cfg.h \
+  E:\CMP2024\cmp2024\embedded2\Smart-Home\inc/SPI.h \
+  E:\CMP2024\cmp2024\embedded2\Smart-Home\inc/WDT.h \
+  E:\CMP2024\cmp2024\embedded2\Smart-Home\inc/I2C.h \
+  E:\CMP2024\cmp2024\embedded2\Smart-Home\inc/I2C_cfg.h \
+  E:\CMP2024\cmp2024\embedded2\Smart-Home\inc/EEPROM.h \
+  E:\CMP2024\cmp2024\embedded2\Smart-Home\inc/EEPROM_cfg.h \
+  E:\CMP2024\cmp2024\embedded2\Smart-Home\inc/Calculator.h \
+  E:\CMP2024\cmp2024\embedded2\Smart-Home\inc/Time_Table.h
 
-D:\Embedded\Work_Space\Project\inc/macros.h:
+E:\CMP2024\cmp2024\embedded2\Smart-Home\inc/macros.h:
 
-D:\Embedded\Work_Space\Project\inc/std_types.h:
+E:\CMP2024\cmp2024\embedded2\Smart-Home\inc/std_types.h:
 
-D:\Embedded\Work_Space\Project\inc/DIO.h:
+E:\CMP2024\cmp2024\embedded2\Smart-Home\inc/DIO.h:
 
-D:\Embedded\Work_Space\Project\inc/SSD.h:
+E:\CMP2024\cmp2024\embedded2\Smart-Home\inc/SSD.h:
 
-D:\Embedded\Work_Space\Project\inc/DIO.h:
+E:\CMP2024\cmp2024\embedded2\Smart-Home\inc/DIO.h:
 
-D:\Embedded\Work_Space\Project\inc/LCD.h:
+E:\CMP2024\cmp2024\embedded2\Smart-Home\inc/LCD.h:
 
-D:\Embedded\Work_Space\Project\inc/Keypad.h:
+E:\CMP2024\cmp2024\embedded2\Smart-Home\inc/Keypad.h:
 
-D:\Embedded\Work_Space\Project\inc/ExtInterrupt.h:
+E:\CMP2024\cmp2024\embedded2\Smart-Home\inc/ExtInterrupt.h:
 
-D:\Embedded\Work_Space\Project\inc/Adc.h:
+E:\CMP2024\cmp2024\embedded2\Smart-Home\inc/Adc.h:
 
-D:\Embedded\Work_Space\Project\inc/Gpt.h:
+E:\CMP2024\cmp2024\embedded2\Smart-Home\inc/Gpt.h:
 
-D:\Embedded\Work_Space\Project\inc/GlobalInterrupt.h:
+E:\CMP2024\cmp2024\embedded2\Smart-Home\inc/GlobalInterrupt.h:
 
-D:\Embedded\Work_Space\Project\inc/Spt.h:
+E:\CMP2024\cmp2024\embedded2\Smart-Home\inc/Spt.h:
 
-D:\Embedded\Work_Space\Project\inc/std_types.h:
+E:\CMP2024\cmp2024\embedded2\Smart-Home\inc/std_types.h:
 
-D:\Embedded\Work_Space\Project\inc/UART.h:
+E:\CMP2024\cmp2024\embedded2\Smart-Home\inc/UART.h:
 
-D:\Embedded\Work_Space\Project\inc/SPI_cfg.h:
+E:\CMP2024\cmp2024\embedded2\Smart-Home\inc/SPI_cfg.h:
 
-D:\Embedded\Work_Space\Project\inc/SPI.h:
+E:\CMP2024\cmp2024\embedded2\Smart-Home\inc/SPI.h:
 
-D:\Embedded\Work_Space\Project\inc/WDT.h:
+E:\CMP2024\cmp2024\embedded2\Smart-Home\inc/WDT.h:
 
-D:\Embedded\Work_Space\Project\inc/I2C.h:
+E:\CMP2024\cmp2024\embedded2\Smart-Home\inc/I2C.h:
 
-D:\Embedded\Work_Space\Project\inc/I2C_cfg.h:
+E:\CMP2024\cmp2024\embedded2\Smart-Home\inc/I2C_cfg.h:
 
-D:\Embedded\Work_Space\Project\inc/EEPROM.h:
+E:\CMP2024\cmp2024\embedded2\Smart-Home\inc/EEPROM.h:
 
-D:\Embedded\Work_Space\Project\inc/EEPROM_cfg.h:
+E:\CMP2024\cmp2024\embedded2\Smart-Home\inc/EEPROM_cfg.h:
+
+E:\CMP2024\cmp2024\embedded2\Smart-Home\inc/Calculator.h:
+
+E:\CMP2024\cmp2024\embedded2\Smart-Home\inc/Time_Table.h:
