@@ -4,7 +4,6 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../src/Adc.c \
 ../src/Calculator.c \
 ../src/DIO.c \
 ../src/EEPROM.c \
@@ -14,15 +13,12 @@ C_SRCS += \
 ../src/I2C.c \
 ../src/Keypad.c \
 ../src/LCD.c \
-../src/SPI.c \
 ../src/SSD.c \
 ../src/Spt.c \
 ../src/Time_Table.c \
-../src/UART.c \
-../src/WDT.c 
+../src/UART.c 
 
 OBJS += \
-./src/Adc.o \
 ./src/Calculator.o \
 ./src/DIO.o \
 ./src/EEPROM.o \
@@ -32,15 +28,12 @@ OBJS += \
 ./src/I2C.o \
 ./src/Keypad.o \
 ./src/LCD.o \
-./src/SPI.o \
 ./src/SSD.o \
 ./src/Spt.o \
 ./src/Time_Table.o \
-./src/UART.o \
-./src/WDT.o 
+./src/UART.o 
 
 C_DEPS += \
-./src/Adc.d \
 ./src/Calculator.d \
 ./src/DIO.d \
 ./src/EEPROM.d \
@@ -50,12 +43,10 @@ C_DEPS += \
 ./src/I2C.d \
 ./src/Keypad.d \
 ./src/LCD.d \
-./src/SPI.d \
 ./src/SSD.d \
 ./src/Spt.d \
 ./src/Time_Table.d \
-./src/UART.d \
-./src/WDT.d 
+./src/UART.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

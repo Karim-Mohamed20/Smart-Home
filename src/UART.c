@@ -2,109 +2,127 @@
  * UART.c
  *
  *  Created on: ??�/??�/????
- *      Author: ascom
+ *      Author: medoa
  */
 
+
+#include"UART.h"
 #include "std_types.h"
 #include "macros.h"
-#include "Registers.h"
-#include "int.h"
 #include "UART.h"
+#include "Registers.h"
+#include "DIO.h"
 
-#define UCSRC_UCPOL 0
-#define UCSRC_UCSZ0 1
-#define UCSRC_UCSZ1 2
-#define UCSRC_USBS 3
-#define UCSRC_UPM0 4
-#define UCSRC_UPM1 5
-#define UCSRC_UMSEL 6
-#define UCSRC_URSEL 7
+void UART_Init(USART_Mode_Select mode,Parity_Mode pmode,Stop_Bit_Select sbit,Character_Size csize,Baud_Rate_Setting brate)
+{
+    SET_BIT(UCSRC, UCSRC_URSEL); // 3shan tekhali uart to play
+    DIO_SetPinMode(DIO_PORTD, DIO_PIN0, DIO_INPUT_FLOATING);
+	DIO_SetPinMode(DIO_PORTD, DIO_PIN1, DIO_OUTPUT);
 
-#define UCSRB_UCSZ2 2
-#define UCSRB_TXEN 3
-#define UCSRB_RXEN 4
 
-#define UCSRA_TXC 6
-#define UCSRA_RXC 7
-
-void UART_Init (UART_ConfigType* config) {
-
-    SET_BIT(UCSRC,UCSRC_URSEL);
-    CLR_BIT(UCSRC,UCSRC_UMSEL);
-
-    switch (config->parity)
+    if(mode == Asynchronous)
     {
-        case DISABLE_PRITY:
-            CLR_BIT(UCSRC,UCSRC_UPM0);
-            CLR_BIT(UCSRC,UCSRC_UPM1);
-            break;
-        case ENABLE_EVEN_PARITY:
-            CLR_BIT(UCSRC,UCSRC_UPM0);
-            SET_BIT(UCSRC,UCSRC_UPM1);
-            break;
-        case ENABLE_ODD_PARITY:
-            SET_BIT(UCSRC,UCSRC_UPM0);
-            SET_BIT(UCSRC,UCSRC_UPM1);
-            break;
-        default:
-            break;
+        CLR_BIT(UCSRC,UCSRC_UMSEL);
+    }else if(mode == Synchronous)
+    {
+        SET_BIT(UCSRC,UCSRC_UMSEL);
+
     }
 
-    switch (config->stop_bit)
+    switch (pmode)
     {
-        case ONE_STOP_BIT:
-            CLR_BIT(UCSRC,UCSRC_USBS);
-            break;
-        case TWO_STOP_BIT:
-            SET_BIT(UCSRC,UCSRC_USBS);
-            break;
-        default:
-            break;
+    case Disabled_parity:
+        CLR_BIT(UCSRC,UCSRC_UPM0);
+        CLR_BIT(UCSRC,UCSRC_UPM1);
+        /* code */
+        break;
+    case Even_Parity:
+        CLR_BIT(UCSRC,UCSRC_UPM0);
+        SET_BIT(UCSRC,UCSRC_UPM1);
+        /* code */
+        break;
+    case Odd_Parity:
+        SET_BIT(UCSRC,UCSRC_UPM0);
+        SET_BIT(UCSRC,UCSRC_UPM1);
+        /* code */
+        break;
+    
+    default:
+        break;
     }
-
-    switch (config->char_size)
+    if(sbit==one_Stop_bit)
     {
-        case CHARACTER_SIZE_5_BIT:
-            CLR_BIT(UCSRC,UCSRC_UCSZ0);
-            CLR_BIT(UCSRC,UCSRC_UCSZ1);
-            CLR_BIT(UCSRB,UCSRB_UCSZ2);
-            break;
-        case CHARACTER_SIZE_6_BIT:
-            SET_BIT(UCSRC,UCSRC_UCSZ0);
-            CLR_BIT(UCSRC,UCSRC_UCSZ1);
-            CLR_BIT(UCSRB,UCSRB_UCSZ2);
-            break;
-        case CHARACTER_SIZE_7_BIT:
-            CLR_BIT(UCSRC,UCSRC_UCSZ0);
-            SET_BIT(UCSRC,UCSRC_UCSZ1);
-            CLR_BIT(UCSRB,UCSRB_UCSZ2);
-            break;
-        case CHARACTER_SIZE_8_BIT:
-            SET_BIT(UCSRC,UCSRC_UCSZ0);
-            SET_BIT(UCSRC,UCSRC_UCSZ1);
-            CLR_BIT(UCSRB,UCSRB_UCSZ2);
-            break;
-        case CHARACTER_SIZE_9_BIT:
-            SET_BIT(UCSRC,UCSRC_UCSZ0);
-            SET_BIT(UCSRC,UCSRC_UCSZ1);
-            SET_BIT(UCSRB,UCSRB_UCSZ2);
-            break;
-        default:
-            break;
+        CLR_BIT(UCSRC,UCSRC_USBS);
+    }else if( sbit==two_Stop_bit)
+    {
+        SET_BIT(UCSRC,UCSRC_USBS);
     }
-
-    UBRRL=103;
+    switch (csize)
+    {
+    case _5_bit:
+        CLR_BIT(UCSRC,UCSRC_UCSZ0);
+        CLR_BIT(UCSRC,UCSRC_UCSZ1);
+        CLR_BIT(UCSRC,UCSRB_UCSZ2);
+        /* code */
+        break;
+    case _6_bit:
+        CLR_BIT(UCSRC,UCSRC_UCSZ0);
+        CLR_BIT(UCSRC,UCSRC_UCSZ1);
+        CLR_BIT(UCSRC,UCSRB_UCSZ2);
+        /* code */
+        break;
+    case _7_bit:
+        CLR_BIT(UCSRC,UCSRC_UCSZ0);
+        SET_BIT(UCSRC,UCSRC_UCSZ1);
+        CLR_BIT(UCSRC,UCSRB_UCSZ2);
+        /* code */
+        break;
+    case _8_bit:
+        SET_BIT(UCSRC,UCSRC_UCSZ0);
+        SET_BIT(UCSRC,UCSRC_UCSZ1);
+        CLR_BIT(UCSRC,UCSRB_UCSZ2);
+        /* code */
+        break;
+    case _9_bit:
+        SET_BIT(UCSRC,UCSRC_UCSZ0);
+        SET_BIT(UCSRC,UCSRC_UCSZ1);
+        SET_BIT(UCSRC,UCSRB_UCSZ2);
+        /* code */
+        break;
+    
+    default:
+        break;
+    }
+    switch (brate)
+    {
+    case _2400:
+        UBRRL=416;
+        /* code */
+        break;
+    case _4800:
+        UBRRL=207;
+        /* code */
+        break;
+    case _9600:
+        UBRRL=103;
+        /* code */
+        break;
+    
+    default:
+        break;
+    }
     SET_BIT(UCSRB,UCSRB_RXEN);
     SET_BIT(UCSRB,UCSRB_TXEN);
 }
 
-void UART_Send_Data (u8 data) {
+
+void UART_Send_Data(u8 data){
+    
     UDR=data;
-    while (GET_BIT(UCSRA,UCSRA_TXC) == 0);
+    while (GET_BIT(UCSRA,UCSRA_TXC)==0);
 }
 
-u8 UART_Recieve_Data (void) {
-    while (GET_BIT(UCSRA,UCSRA_RXC) == 0);
+u8 Recieve_Data(){
+    while (GET_BIT(UCSRA,UCSRA_RCX)==0);
     return UDR;
 }
-
