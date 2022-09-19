@@ -186,7 +186,7 @@ LOAD e:/cmp2024/iti embeded sysytem/tools/01- imt sdk-20220809t141023z-001/01- i
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000     0x7c9e
+.text           0x00000000     0x7de4
  *(.vectors)
  .vectors       0x00000000       0x54 e:/cmp2024/iti embeded sysytem/tools/01- imt sdk-20220809t141023z-001/01- imt sdk/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
                 0x00000000                __vectors
@@ -526,48 +526,51 @@ LOAD e:/cmp2024/iti embeded sysytem/tools/01- imt sdk-20220809t141023z-001/01- i
                 0x000061be                TimerHandler
  .text.servo90  0x000061de       0x5c ./main.o
                 0x000061de                servo90
- .text.main     0x0000623a      0x26a ./main.o
+ .text.main     0x0000623a      0x280 ./main.o
                 0x0000623a                main
  .text.Add_New_password
-                0x000064a4      0x4fc ./main.o
-                0x000064a4                Add_New_password
+                0x000064ba      0x4f4 ./main.o
+                0x000064ba                Add_New_password
  .text.Check_For_Password
-                0x000069a0      0x168 ./main.o
-                0x000069a0                Check_For_Password
+                0x000069ae      0x168 ./main.o
+                0x000069ae                Check_For_Password
+ .text.restoredprayerdata
+                0x00006b16      0x138 ./main.o
+                0x00006b16                restoredprayerdata
  .text.dispaly_prayer
-                0x00006b08      0x2d4 ./main.o
-                0x00006b08                dispaly_prayer
+                0x00006c4e      0x2d4 ./main.o
+                0x00006c4e                dispaly_prayer
  .text.set_Clock_Settings
-                0x00006ddc      0x18c ./main.o
-                0x00006ddc                set_Clock_Settings
+                0x00006f22      0x18c ./main.o
+                0x00006f22                set_Clock_Settings
  .text.Set_Prayer_Time
-                0x00006f68      0x820 ./main.o
-                0x00006f68                Set_Prayer_Time
+                0x000070ae      0x820 ./main.o
+                0x000070ae                Set_Prayer_Time
  .text.Check_For_PassWord
-                0x00007788      0x3f4 ./main.o
-                0x00007788                Check_For_PassWord
+                0x000078ce      0x3f4 ./main.o
+                0x000078ce                Check_For_PassWord
  .text.Check_IS_Anumber
-                0x00007b7c       0x4a ./main.o
-                0x00007b7c                Check_IS_Anumber
- .text.libgcc   0x00007bc6       0x18 e:/cmp2024/iti embeded sysytem/tools/01- imt sdk-20220809t141023z-001/01- imt sdk/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodqi4.o)
-                0x00007bc6                __udivmodqi4
- .text.libgcc   0x00007bde       0x28 e:/cmp2024/iti embeded sysytem/tools/01- imt sdk-20220809t141023z-001/01- imt sdk/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodhi4.o)
-                0x00007bde                __udivmodhi4
- .text.libgcc   0x00007c06       0x26 e:/cmp2024/iti embeded sysytem/tools/01- imt sdk-20220809t141023z-001/01- imt sdk/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_divmodhi4.o)
-                0x00007c06                __divmodhi4
-                0x00007c06                _div
- .text.libgcc   0x00007c2c        0x0 e:/cmp2024/iti embeded sysytem/tools/01- imt sdk-20220809t141023z-001/01- imt sdk/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
- .text.libgcc   0x00007c2c        0x0 e:/cmp2024/iti embeded sysytem/tools/01- imt sdk-20220809t141023z-001/01- imt sdk/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
- .text.libgcc   0x00007c2c        0x0 e:/cmp2024/iti embeded sysytem/tools/01- imt sdk-20220809t141023z-001/01- imt sdk/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
- .text.libgcc   0x00007c2c       0x38 e:/cmp2024/iti embeded sysytem/tools/01- imt sdk-20220809t141023z-001/01- imt sdk/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_prologue.o)
-                0x00007c2c                __prologue_saves__
- .text.libgcc   0x00007c64       0x36 e:/cmp2024/iti embeded sysytem/tools/01- imt sdk-20220809t141023z-001/01- imt sdk/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_epilogue.o)
-                0x00007c64                __epilogue_restores__
-                0x00007c9a                . = ALIGN (0x2)
+                0x00007cc2       0x4a ./main.o
+                0x00007cc2                Check_IS_Anumber
+ .text.libgcc   0x00007d0c       0x18 e:/cmp2024/iti embeded sysytem/tools/01- imt sdk-20220809t141023z-001/01- imt sdk/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodqi4.o)
+                0x00007d0c                __udivmodqi4
+ .text.libgcc   0x00007d24       0x28 e:/cmp2024/iti embeded sysytem/tools/01- imt sdk-20220809t141023z-001/01- imt sdk/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodhi4.o)
+                0x00007d24                __udivmodhi4
+ .text.libgcc   0x00007d4c       0x26 e:/cmp2024/iti embeded sysytem/tools/01- imt sdk-20220809t141023z-001/01- imt sdk/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_divmodhi4.o)
+                0x00007d4c                __divmodhi4
+                0x00007d4c                _div
+ .text.libgcc   0x00007d72        0x0 e:/cmp2024/iti embeded sysytem/tools/01- imt sdk-20220809t141023z-001/01- imt sdk/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .text.libgcc   0x00007d72        0x0 e:/cmp2024/iti embeded sysytem/tools/01- imt sdk-20220809t141023z-001/01- imt sdk/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc   0x00007d72        0x0 e:/cmp2024/iti embeded sysytem/tools/01- imt sdk-20220809t141023z-001/01- imt sdk/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+ .text.libgcc   0x00007d72       0x38 e:/cmp2024/iti embeded sysytem/tools/01- imt sdk-20220809t141023z-001/01- imt sdk/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_prologue.o)
+                0x00007d72                __prologue_saves__
+ .text.libgcc   0x00007daa       0x36 e:/cmp2024/iti embeded sysytem/tools/01- imt sdk-20220809t141023z-001/01- imt sdk/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_epilogue.o)
+                0x00007daa                __epilogue_restores__
+                0x00007de0                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x00007c9a        0x0 e:/cmp2024/iti embeded sysytem/tools/01- imt sdk-20220809t141023z-001/01- imt sdk/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
-                0x00007c9a                exit
-                0x00007c9a                _exit
+ .fini9         0x00007de0        0x0 e:/cmp2024/iti embeded sysytem/tools/01- imt sdk-20220809t141023z-001/01- imt sdk/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+                0x00007de0                exit
+                0x00007de0                _exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -586,11 +589,11 @@ LOAD e:/cmp2024/iti embeded sysytem/tools/01- imt sdk-20220809t141023z-001/01- i
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00007c9a        0x4 e:/cmp2024/iti embeded sysytem/tools/01- imt sdk-20220809t141023z-001/01- imt sdk/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .fini0         0x00007de0        0x4 e:/cmp2024/iti embeded sysytem/tools/01- imt sdk-20220809t141023z-001/01- imt sdk/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x00007c9e                _etext = .
+                0x00007de4                _etext = .
 
-.data           0x00800060      0x140 load address 0x00007c9e
+.data           0x00800060      0x140 load address 0x00007de4
                 0x00800060                PROVIDE (__data_start, .)
  *(.data)
  .data          0x00800060        0x0 e:/cmp2024/iti embeded sysytem/tools/01- imt sdk-20220809t141023z-001/01- imt sdk/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
@@ -702,8 +705,8 @@ LOAD e:/cmp2024/iti embeded sysytem/tools/01- imt sdk-20220809t141023z-001/01- i
  COMMON         0x008001bb        0xa ./main.o
                 0x008001bb                prayerstime
                 0x008001c5                PROVIDE (__bss_end, .)
-                0x00007c9e                __data_load_start = LOADADDR (.data)
-                0x00007dde                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x00007de4                __data_load_start = LOADADDR (.data)
+                0x00007f24                __data_load_end = (__data_load_start + SIZEOF (.data))
 
 .noinit         0x008001c5        0x0
                 0x008001c5                PROVIDE (__noinit_start, .)
@@ -728,7 +731,7 @@ LOAD e:/cmp2024/iti embeded sysytem/tools/01- imt sdk-20220809t141023z-001/01- i
 .signature
  *(.signature*)
 
-.stab           0x00000000     0x7c8c
+.stab           0x00000000     0x7e60
  *(.stab)
  .stab          0x00000000      0x564 ./src/Calculator.o
  .stab          0x00000564      0x888 ./src/DIO.o
@@ -755,12 +758,12 @@ LOAD e:/cmp2024/iti embeded sysytem/tools/01- imt sdk-20220809t141023z-001/01- i
                                0x11f4 (size before relaxing)
  .stab          0x000055d4      0x444 ./src/UART.o
                                 0x54c (size before relaxing)
- .stab          0x00005a18     0x2274 ./main.o
-                               0x2748 (size before relaxing)
+ .stab          0x00005a18     0x2448 ./main.o
+                               0x291c (size before relaxing)
 
-.stabstr        0x00000000     0x2534
+.stabstr        0x00000000     0x254f
  *(.stabstr)
- .stabstr       0x00000000     0x2534 ./src/Calculator.o
+ .stabstr       0x00000000     0x254f ./src/Calculator.o
 
 .stab.excl
  *(.stab.excl)

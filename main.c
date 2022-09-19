@@ -62,6 +62,7 @@ void dispaly_prayer();
 void Set_Prayer_Time();
 u8 Check_For_Password(u8 id, u8 *arr);
 void Add_New_password();
+void restoredprayerdata();
 void Send_Data_UARTCOMM(int count, u8 c)
 {
 	if (c == 1) // clock settings
@@ -78,35 +79,14 @@ void Send_Data_UARTCOMM(int count, u8 c)
 	{
 		UART_Send_Data(6);
 		_delay_ms(200);
-		u8 i=0;
-		
-		for (i=0;i<10;i++)
+		u8 i = 0;
+
+		for (i = 0; i < 10; i++)
 		{
 			UART_Send_Data(prayerstime[i]);
 			_delay_ms(200);
 		}
 	}
-	//u8 i = 0;
-	// if(1){
-
-	// UART_Send_Data(Clocktime[0]);
-	// _delay_ms(100);
-	// UART_Send_Data(Clocktime[1]);
-	// // for (i = 0; i < 2; i++)
-	// // {
-	// // 	UART_Send_Data(Clocktime[i]);
-	// // 	/* code */
-	// // }
-	// }
-	// else if(c == 6)
-	// {
-	// 	for (i = 0; i < 10; i++)
-	// {
-	// 	UART_Send_Data(prayerstime[i]);
-	// 	/* code */
-	// }
-
-	// }
 }
 volatile u16 counter = 0;
 u8 wp = 0;
@@ -122,67 +102,15 @@ void servo90()
 	Spt_Set_ICR1(20000);
 	Spt_StartTimer(SPT_CHANNEL_TIMER1A, Get_OCR_Value(180));
 	DIO_SetPinMode(DIO_PORTD, DIO_PIN5, DIO_INPUT_FLOATING);
-	// while (1)
-	// 	;
 }
-/*************Copied to kareem**************/
-// void Recieve_UART_data(u8 ** arr){
-// 	u8 c=UART_Recieve_Data();
-// 	if(c=='p')
-// 	{
-// 		u8 i;
-// 		for ( i = 0; i < 10; i++)
-// 		{
-// 			(*arr)[i]=UART_Recieve_Data();
-// 			/* code */
-// 		}
-
-// 	}else if(c =='c')
-// 	{
-// 		u8 i;
-// 		for (  i = 0; i < 2; i++)
-// 		{
-// 			(*arr)[i]=UART_Recieve_Data();
-// 			/* code */
-// 		}
-
-// 	}
-// }
-// void INT0_Handler (void) {
-// 	Recieve_UART_data();
-// }
-// ExtInterrupt_Init();
-// ExtInterrupt_SetINT0Callback(INT0_Handler);
-/******************************************/
 int main(void)
 {
 	/*for UART Communication interrupt pin Don't touch*/
 	DIO_SetPinMode(DIO_PORTB, DIO_PIN4, DIO_OUTPUT);
-	// DIO_SetPinMode(DIO_PORTD, DIO_PIN0, DIO_INPUT_FLOATING);
-	// DIO_SetPinMode(DIO_PORTD, DIO_PIN1, DIO_OUTPUT);
-
-	//	UART_ConfigType u1;
-	//	u1.parity = ENABLE_EVEN_PARITY;
-	//	u1.stop_bit = ONE_STOP_BIT;
-	//	u1.char_size = CHARACTER_SIZE_8_BIT;
-	//	UART_Init(&u1);
 	UART_Init(Asynchronous, Odd_Parity, one_Stop_bit, _8_bit, _9600);
 	/*************************************************/
-
-	// ADC();
-	//	Gpt_ConfigType config = {GPT_CHANNEL_TIMER0, GPT_MODE_CTC, GPT_OUTPUT_NORMAL, GPT_PRESCALER_1024};
 	DIO_SetPinMode(DIO_PORTB, DIO_PIN3, DIO_OUTPUT);
-	// Gpt_Init(&config);
-	//  Gpt_StartTimer(GPT_CHANNEL_TIMER0, 250);
-	//  Gpt_EnableNotification(GPT_CHANNEL_TIMER0, GPT_MODE_CTC, TimerHandler);
 	GlobalInterrupt_Enable();
-	// while (1) {
-	//     if (counter == 31) { // every second
-	//         counter = 0;
-	//         DIO_FlipPinLevel(DIO_PORTB,DIO_PIN3);
-	//     }
-	// }
-	////////////////////////////////////////////
 	DIO_SetPinMode(DIO_PORTC, DIO_PIN0, DIO_OUTPUT);
 	DIO_SetPinLevel(DIO_PORTC, DIO_PIN0, DIO_HIGH);
 	LCD_Init();
@@ -192,53 +120,21 @@ int main(void)
 	EEPROM_Write_Byte(0b10100000, 25, 25);
 	_delay_ms(100);
 	ID = EEPROM_Read_Byte(0b10100000, 25);
-	// while(1){
-	// 	Keypad_ButtonType pressed_button2;
-	// do
-	// 	{
-	// 		pressed_button2 = Keypad_GetPressedButton();
-	// 	} while (pressed_button2 == KEYPAD_BUTTON_INVALID);
-	// LCD_Clear();
-	// 	LCD_DisplayString("Fjr:11");
-	// }
-	// Clock_Set_Fajr(24, 60);
-	// dispaly_prayer();
-	// 	Set_Prayer_Time();
-	// LCD_Clear();
-	// LCD_DisplayString("display---");
-	// 	_delay_ms(5000);
-	// dispaly_prayer();
-	// EEPROM_Write_Byte(0b10100000,0b00000000,4);
-	// Clock_Set_Fajr(04);
-	//	_delay_ms(1000);
-	//	// Clock_Set_Dhuhr(12);
-	//	_delay_ms(1000);
-	//	LCD_DisplayString("Fajr is");
-	//	LCD_DisplayNumber(Clock_Get_Fajr());
-	//	_delay_ms(1000);
-	//	LCD_Clear();
-	//	LCD_DisplayString("dhuhr is");
-	//	LCD_DisplayNumber(Clock_Get_Dhuhr());
-	//	_delay_ms(1000);
 	LCD_Clear();
 	LCD_DisplayString("Prayers Settings -> 1");
 	LCD_DisplayString("Unlock -> 2");
 	LCD_SetCursorPosition(1, 0);
 	LCD_DisplayString("Clock Settings -> 3");
-
 	Keypad_ButtonType pressed_button;
 	Keypad_Init();
+	restoredprayerdata();
+	DIO_FlipPinLevel(DIO_PORTB, DIO_PIN4);
+	Send_Data_UARTCOMM(10, 2);
 	dispaly_prayer();
 	u8 toggle = 0;
+
 	while (1)
 	{
-
-		/* code */
-
-		// do
-		// {
-		// 	pressed_button = Keypad_GetPressedButton();
-		// } while (pressed_button == KEYPAD_BUTTON_INVALID);
 
 		if (counter >= 31 * 5)
 		{
@@ -246,11 +142,6 @@ int main(void)
 			counter = 0;
 			DIO_SetPinLevel(DIO_PORTB, DIO_PIN3, DIO_LOW);
 		}
-		// do
-		// {
-		// 	pressed_button = Keypad_GetPressedButton();
-		// } while (pressed_button == KEYPAD_BUTTON_INVALID);
-
 		pressed_button = Keypad_GetPressedButton();
 		if (pressed_button != KEYPAD_BUTTON_INVALID && !toggle)
 		{
@@ -267,21 +158,15 @@ int main(void)
 		if (pressed_button != KEYPAD_BUTTON_INVALID && toggle)
 		{
 			toggle = 0;
-
 			if (pressed_button == CALCULATOR_BUTTON_CLR)
 			{
 				Check_For_PassWord();
 			}
 			else if (pressed_button == CALCULATOR_BUTTON_NUM1)
 			{
-
 				Set_Prayer_Time();
 				DIO_FlipPinLevel(DIO_PORTB, DIO_PIN4);
 				Send_Data_UARTCOMM(10, 2);
-				// UART_Send_Data('c');
-				//  call uart send data
-				//  toggle bit to cause an interrupt
-				//  -> UART
 			}
 			else if (pressed_button == CALCULATOR_BUTTON_NUM2 && !wp)
 			{
@@ -289,9 +174,7 @@ int main(void)
 			}
 			else if (pressed_button == CALCULATOR_BUTTON_NUM3)
 			{
-
 				DIO_FlipPinLevel(DIO_PORTB, DIO_PIN4);
-
 				set_Clock_Settings();
 				Send_Data_UARTCOMM(2, 1);
 			}
@@ -323,7 +206,7 @@ void Add_New_password()
 	} while (pressed_button == KEYPAD_BUTTON_INVALID || !Check_IS_Anumber(pressed_button)); // 12
 	u8 x1 = Calculator_GetRealNumber(pressed_button);
 	LCD_DisplayNumber(x1);
-	LCD_DisplayString(":"); // 12:
+	//LCD_DisplayString(":"); // 12:
 	do
 	{
 		pressed_button = Keypad_GetPressedButton();
@@ -336,9 +219,6 @@ void Add_New_password()
 	} while (pressed_button == KEYPAD_BUTTON_INVALID || !Check_IS_Anumber(pressed_button));
 	u8 x3 = Calculator_GetRealNumber(pressed_button);
 	LCD_DisplayNumber(x3);
-	// LCD_DisplayString("|");
-	// Clock_Set_Dhuhr((u8)(x * 10 + x1), (u8)(x2 * 10 + x3));
-
 	EEPROM_Write_Byte(0b10100000, ID + 1, x); // 26
 	ID++;
 	_delay_ms(100);
@@ -372,6 +252,43 @@ u8 Check_For_Password(u8 id, u8 *arr)
 	if (f)
 		return 0;
 	return 1;
+}
+void restoredprayerdata()
+{
+	u16 y = Clock_Get_Fajr();
+	u8 M = y % 100;
+	u8 H = y / 100; // 5/10 5
+	y = 0;
+	prayerstime[0] = H;
+	prayerstime[1] = M;
+
+	y = Clock_Get_Dhuhr();
+	M = y % 100;
+	H = y / 100; // 5/10 5
+	y = 0;
+	prayerstime[2] = H;
+	prayerstime[3] = M;
+
+	y = Clock_Get_Asr();
+	M = y % 100;
+	H = y / 100; // 5/10 5
+	y = 0;
+	prayerstime[4] = H;
+	prayerstime[5] = M;
+
+	y = Clock_Get_Maghrib();
+	M = y % 100;
+	H = y / 100; // 5/10 5
+	y = 0;
+	prayerstime[6] = H;
+	prayerstime[7] = M;
+
+	y = Clock_Get_Isha();
+	M = y % 100;
+	H = y / 100; // 5/10 5
+
+	prayerstime[8] = H;
+	prayerstime[9] = M;
 }
 void dispaly_prayer()
 {
