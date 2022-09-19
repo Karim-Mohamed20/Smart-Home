@@ -26,7 +26,7 @@
 #include "Calculator.h"
 #include "Time_Table.h"
 u16 result = 0;
-u8 Clocktime[2]={0};
+u8 Clocktime[2] = {0};
 u8 prayerstime[10];
 
 void Adc_Handler(u16 res)
@@ -62,19 +62,33 @@ void dispaly_prayer();
 void Set_Prayer_Time();
 u8 Check_For_Password(u8 id, u8 *arr);
 void Add_New_password();
-void Send_Data_UARTCOMM( int count, u8 c)
+void Send_Data_UARTCOMM(int count, u8 c)
 {
-	UART_Send_Data(5);
-	_delay_ms(200);
-	UART_Send_Data(6);
-	_delay_ms(200);
-	UART_Send_Data(Clocktime[0]);
-	_delay_ms(200);
-	UART_Send_Data(Clocktime[1]);
-	
-	u8 i = 0;
+	if (c == 1) // clock settings
+	{
+		UART_Send_Data(5);
+		_delay_ms(200);
+		UART_Send_Data(6);
+		_delay_ms(200);
+		UART_Send_Data(Clocktime[0]);
+		_delay_ms(200);
+		UART_Send_Data(Clocktime[1]);
+	}
+	else if (c == 2)
+	{
+		UART_Send_Data(6);
+		_delay_ms(200);
+		u8 i=0;
+		
+		for (i=0;i<10;i++)
+		{
+			UART_Send_Data(prayerstime[i]);
+			_delay_ms(200);
+		}
+	}
+	//u8 i = 0;
 	// if(1){
-	
+
 	// UART_Send_Data(Clocktime[0]);
 	// _delay_ms(100);
 	// UART_Send_Data(Clocktime[1]);
@@ -144,15 +158,15 @@ int main(void)
 {
 	/*for UART Communication interrupt pin Don't touch*/
 	DIO_SetPinMode(DIO_PORTB, DIO_PIN4, DIO_OUTPUT);
-	//DIO_SetPinMode(DIO_PORTD, DIO_PIN0, DIO_INPUT_FLOATING);
-	//DIO_SetPinMode(DIO_PORTD, DIO_PIN1, DIO_OUTPUT);
+	// DIO_SetPinMode(DIO_PORTD, DIO_PIN0, DIO_INPUT_FLOATING);
+	// DIO_SetPinMode(DIO_PORTD, DIO_PIN1, DIO_OUTPUT);
 
-//	UART_ConfigType u1;
-//	u1.parity = ENABLE_EVEN_PARITY;
-//	u1.stop_bit = ONE_STOP_BIT;
-//	u1.char_size = CHARACTER_SIZE_8_BIT;
-//	UART_Init(&u1);
-	UART_Init(Asynchronous,Odd_Parity,one_Stop_bit,_8_bit,_9600);
+	//	UART_ConfigType u1;
+	//	u1.parity = ENABLE_EVEN_PARITY;
+	//	u1.stop_bit = ONE_STOP_BIT;
+	//	u1.char_size = CHARACTER_SIZE_8_BIT;
+	//	UART_Init(&u1);
+	UART_Init(Asynchronous, Odd_Parity, one_Stop_bit, _8_bit, _9600);
 	/*************************************************/
 
 	// ADC();
@@ -261,9 +275,9 @@ int main(void)
 			else if (pressed_button == CALCULATOR_BUTTON_NUM1)
 			{
 
-				DIO_FlipPinLevel(DIO_PORTB, DIO_PIN4);
 				Set_Prayer_Time();
-				Send_Data_UARTCOMM(10, 'p');
+				DIO_FlipPinLevel(DIO_PORTB, DIO_PIN4);
+				Send_Data_UARTCOMM(10, 2);
 				// UART_Send_Data('c');
 				//  call uart send data
 				//  toggle bit to cause an interrupt
@@ -277,9 +291,9 @@ int main(void)
 			{
 
 				DIO_FlipPinLevel(DIO_PORTB, DIO_PIN4);
-				
+
 				set_Clock_Settings();
-				Send_Data_UARTCOMM(2,6);
+				Send_Data_UARTCOMM(2, 1);
 			}
 			else if (pressed_button == CALCULATOR_BUTTON_NUM4)
 			{
